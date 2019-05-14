@@ -1,7 +1,7 @@
-package kz.devyellow.RestoApp.auth.services;
+package kz.devyellow.RestoApp.modules.auth.services;
 
-import kz.devyellow.RestoApp.auth.entity.RestoUser;
-import kz.devyellow.RestoApp.auth.repository.RestoUserRepository;
+import kz.devyellow.RestoApp.modules.auth.entity.RestoUser;
+import kz.devyellow.RestoApp.modules.auth.repository.RestoUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +12,7 @@ public class UserService {
     private RestoUserRepository userRepository;
 
     public RestoUser findByLogin(String login) {
-       return userRepository.findByLogin("login");
+       return userRepository.findByLogin(login);
     }
 
     public RestoUser saveUser(RestoUser user) {

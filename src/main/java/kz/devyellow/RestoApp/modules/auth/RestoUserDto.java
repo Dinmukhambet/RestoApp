@@ -1,4 +1,4 @@
-package kz.devyellow.RestoApp.auth;
+package kz.devyellow.RestoApp.modules.auth;
 
 public class RestoUserDto {
 

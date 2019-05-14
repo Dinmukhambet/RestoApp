@@ -1,4 +1,4 @@
-package kz.devyellow.RestoApp.auth.entity;
+package kz.devyellow.RestoApp.modules.auth.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
