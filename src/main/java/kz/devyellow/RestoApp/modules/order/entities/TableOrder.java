@@ -3,7 +3,7 @@ package kz.devyellow.RestoApp.modules.order.entities;
 import kz.devyellow.RestoApp.modules.auth.entity.RestoUser;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.util.*;
 
 @Entity
 public class TableOrder {
@@ -14,10 +14,11 @@ public class TableOrder {
 
     private int tableNumber;
 
-    private RestoUser customer;
-
     @Temporal(TemporalType.TIMESTAMP)
     private Date creationDateTime;
+
+  /*  @OneToMany(fetch =  FetchType.LAZY)
+    private List<RestoUser> customer = new ArrayList<>();*/
 
 
     //region getters & setters
@@ -37,14 +38,6 @@ public class TableOrder {
         this.tableNumber = tableNumber;
     }
 
-    public RestoUser getCustomer() {
-        return customer;
-    }
-
-    public void setCustomer(RestoUser customer) {
-        this.customer = customer;
-    }
-
     public Date getCreationDateTime() {
         return creationDateTime;
     }
@@ -52,5 +45,14 @@ public class TableOrder {
     public void setCreationDateTime(Date creationDateTime) {
         this.creationDateTime = creationDateTime;
     }
+
+/*    public List<RestoUser> getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(List<RestoUser> customer) {
+        this.customer = customer;
+    }*/
+
     //endregion
 }

@@ -1,9 +1,8 @@
 package kz.devyellow.RestoApp.modules.auth.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import kz.devyellow.RestoApp.modules.order.entities.MenuOrder;
+
+import javax.persistence.*;
 
 @Entity
 public class RestoUser {
@@ -16,6 +15,10 @@ public class RestoUser {
     private String password;
 
     private String email;
+
+    @OneToOne()
+    private MenuOrder order;
+
     public Integer getId() {
         return id;
     }
@@ -48,5 +51,11 @@ public class RestoUser {
         this.email = email;
     }
 
+    public MenuOrder getOrder() {
+        return order;
+    }
 
+    public void setOrder(MenuOrder order) {
+        this.order = order;
+    }
 }

@@ -3,19 +3,19 @@ package kz.devyellow.RestoApp.modules.order.entities;
 import kz.devyellow.RestoApp.modules.auth.entity.RestoUser;
 import kz.devyellow.RestoApp.modules.menu.entity.MenuItem;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.List;
-
+@Entity
+@Table(name = "menu_order")
 public class MenuOrder {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    private List<MenuItem> items;
+//    private List<MenuItem> items;
 
+    @OneToOne(optional = false ,fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private RestoUser customer;
 
     private int tableNumberId;
@@ -30,13 +30,13 @@ public class MenuOrder {
         this.id = id;
     }
 
-    public List<MenuItem> getItems() {
+ /*   public List<MenuItem> getItems() {
         return items;
     }
 
     public void setItems(List<MenuItem> items) {
         this.items = items;
-    }
+    }*/
 
     public RestoUser getCustomer() {
         return customer;
