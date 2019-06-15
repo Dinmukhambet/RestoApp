@@ -1,58 +1,34 @@
 package kz.devyellow.RestoApp.modules.order.entities;
 
 import kz.devyellow.RestoApp.modules.auth.entity.RestoUser;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.*;
 
 @Entity
+@Table(name = "table_order")
 public class TableOrder {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Getter
+    @Setter
     private Integer id;
-
+    @Getter
+    @Setter
     private int tableNumber;
 
     @Temporal(TemporalType.TIMESTAMP)
+    @Getter
+    @Setter
     private Date creationDateTime;
 
-  /*  @OneToMany(fetch =  FetchType.LAZY)
-    private List<RestoUser> customer = new ArrayList<>();*/
+    @OneToMany(mappedBy = "tableOrder")
+    @Getter
+    @Setter
+    private List<RestoUser> customers = new ArrayList<>();
 
 
-    //region getters & setters
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public int getTableNumber() {
-        return tableNumber;
-    }
-
-    public void setTableNumber(int tableNumber) {
-        this.tableNumber = tableNumber;
-    }
-
-    public Date getCreationDateTime() {
-        return creationDateTime;
-    }
-
-    public void setCreationDateTime(Date creationDateTime) {
-        this.creationDateTime = creationDateTime;
-    }
-
-/*    public List<RestoUser> getCustomer() {
-        return customer;
-    }
-
-    public void setCustomer(List<RestoUser> customer) {
-        this.customer = customer;
-    }*/
-
-    //endregion
 }
