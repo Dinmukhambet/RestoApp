@@ -22,9 +22,18 @@ public class MenuListController {
 		return service.getAll();
 	}
 
-	@GetMapping("/employees/{searchText}")
+	@GetMapping("/search/{searchText}")
 	public List<MenuItem> getMenuItems(@PathVariable String searchText) {
 		return service.getMenuItemsByName(searchText);
+	}
+
+	@GetMapping("/{id}")
+	public MenuItem getMenuItem(@PathVariable Long id) {
+		MenuItem item = new MenuItem();
+		if (service.getItemById(id).isPresent()) {
+			item = service.getItemById(id).get();
+		}
+		return item;
 	}
 
 
