@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class MenuListService {
@@ -14,13 +15,19 @@ public class MenuListService {
 	MenuListRepository repository;
 
 	public List<MenuItem> getMenuItemsByName(String name) {
-		return repository.findByNomination(name);
+		return repository.findByNominationContaining(name);
 	}
 
 
 	public List<MenuItem> getAll() {
 		return repository.findAll();
 	}
+
+	public Optional<MenuItem> getItemById(Long id) {
+		return repository.findById(id);
+	}
+
+
 
 
 
