@@ -1,6 +1,6 @@
 package kz.devyellow.RestoApp.modules.menu.controller;
 
-import kz.devyellow.RestoApp.modules.menu.entity.MenuItem;
+import kz.devyellow.RestoApp.modules.menu.entity.Food;
 import kz.devyellow.RestoApp.modules.menu.services.MenuListService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,18 +18,18 @@ public class MenuListController {
 	MenuListService service;
 
 	@GetMapping("all")
-	public List<MenuItem> getMenu() {
+	public List<Food> getMenu() {
 		return service.getAll();
 	}
 
 	@GetMapping("/search/{searchText}")
-	public List<MenuItem> getMenuItems(@PathVariable String searchText) {
+	public List<Food> getMenuItems(@PathVariable String searchText) {
 		return service.getMenuItemsByName(searchText);
 	}
 
 	@GetMapping("/{id}")
-	public MenuItem getMenuItem(@PathVariable Long id) {
-		MenuItem item = new MenuItem();
+	public Food getMenuItem(@PathVariable Long id) {
+		Food item = new Food();
 		if (service.getItemById(id).isPresent()) {
 			item = service.getItemById(id).get();
 		}

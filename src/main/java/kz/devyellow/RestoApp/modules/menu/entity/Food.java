@@ -9,7 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class MenuItem {
+public class Food {
 
 	@Id
 	@GeneratedValue(strategy= GenerationType.AUTO)
@@ -28,5 +28,8 @@ public class MenuItem {
 	@Getter
 	@Setter
 	private Double price;
+
+	//private boolean prepared;
+	//private boolean served;
 
 }

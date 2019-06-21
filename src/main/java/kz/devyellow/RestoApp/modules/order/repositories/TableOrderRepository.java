@@ -1,7 +1,9 @@
 package kz.devyellow.RestoApp.modules.order.repositories;
 
-import kz.devyellow.RestoApp.modules.menu.entity.MenuItem;
+import kz.devyellow.RestoApp.modules.menu.entity.Food;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
-public interface TableOrderRepository extends CrudRepository<MenuItem, Long> {
+@Repository
+public interface TableOrderRepository extends CrudRepository<Food, Long> {
 }
