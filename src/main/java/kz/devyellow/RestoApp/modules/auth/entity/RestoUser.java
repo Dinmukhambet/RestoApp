@@ -10,29 +10,32 @@ import javax.persistence.*;
 @Entity
 public class RestoUser {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Getter
-    @Setter
-    private Integer id;
-    @Getter
-    @Setter
-    private String login;
-    @Getter
-    @Setter
-    private String password;
-    @Getter
-    @Setter
-    private String email;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Getter
+	@Setter
+	private Integer id;
+	@Getter
+	@Setter
+	private String login;
+	@Getter
+	@Setter
+	private String password;
+	@Getter
+	@Setter
+	private String email;
+	@Getter
+	@Setter
+	private String status;
 
-    @OneToOne()
-    @Getter
-    @Setter
-    private MenuOrder order;
+	@OneToOne()
+	@Getter
+	@Setter
+	private MenuOrder order;
 
-    @ManyToOne()
-    @JoinColumn(name = "table_order_id")
-    @Getter
-    @Setter
-    private TableOrder tableOrder;
+	@ManyToOne()
+	@JoinColumn(name = "table_order_id")
+	@Getter
+	@Setter
+	private TableOrder tableOrder;
 }
