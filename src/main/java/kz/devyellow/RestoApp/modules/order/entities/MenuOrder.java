@@ -26,7 +26,7 @@ public class MenuOrder {
     @Setter
     private List<Food> items;
 
-    @OneToOne()
+    @OneToOne(fetch = FetchType.LAZY)
     @Getter
     @Setter
     private RestoUser customer;

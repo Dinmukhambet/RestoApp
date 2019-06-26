@@ -9,14 +9,20 @@ import javax.persistence.*;
 @Entity
 public class Review {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Getter
-	@Setter
-	private long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Getter
+    @Setter
+    private long id;
 
-	@Getter
-	@Setter
-	@OneToOne()
-	private RestoUser user;
+
+    @Getter
+    @Setter
+    private String text;
+
+    @Getter
+    @Setter
+    @OneToOne()
+    private RestoUser user;
+
 }

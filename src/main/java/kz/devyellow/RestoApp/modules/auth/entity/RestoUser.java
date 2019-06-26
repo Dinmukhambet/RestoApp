@@ -20,6 +20,9 @@ public class RestoUser {
 	private String login;
 	@Getter
 	@Setter
+	private String fullName;
+	@Getter
+	@Setter
 	private String password;
 	@Getter
 	@Setter
@@ -27,13 +30,12 @@ public class RestoUser {
 	@Getter
 	@Setter
 	private String status;
-
 	@OneToOne()
 	@Getter
 	@Setter
 	private MenuOrder order;
 
-	@ManyToOne()
+	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name = "table_order_id")
 	@Getter
 	@Setter
