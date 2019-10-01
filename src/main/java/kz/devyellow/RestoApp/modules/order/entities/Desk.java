@@ -20,4 +20,8 @@ public class Desk {
 	@Getter
 	@Setter
 	private String name;
+
+	@Getter
+	@Setter
+	private String description;
 }
